@@ -113,7 +113,7 @@ def xml_to_table(db, fname, prod):
     db.commit()
 
 
-def main(argv):
+def getXML(argv):
     try:
         dbname = argv[2]
     except IndexError:
@@ -153,6 +153,6 @@ def main(argv):
         xml_to_table(
             db, fname, prod=not bool(re.search(r"\bitb\b", os.path.basename(fname)))
         )
+    return db
 
-
-main(sys.argv)
+# start(sys.argv)
